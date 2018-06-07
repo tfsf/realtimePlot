@@ -1,2 +1,2 @@
 # realtimePlot
-Plot of multiple realtime graphs
+Plot of multiple realtime graphs using QcustomPlot.
