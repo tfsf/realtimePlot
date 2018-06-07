@@ -1,0 +1,32 @@
+=========================================================================================================================================
+Documentação
+=========================================================================================================================================
+
+void Widget::makePlot() -> FUNÇÃO QUE FAZ O SETUP INICIAL DOS GRÁFICOS, PARA CADA GRAFICO É CONFIGURADO:
+	- label do eixo x		ui->customPlot->xAxis->setLabel("Time");
+    - label do eixo y		ui->customPlot->yAxis->setLabel("Value");	   	
+	- range do eixo y 		ui->customPlot->yAxis->setRange(0.0 , 15.0); //Variando entre 0 e 15
+	- Título do gráfico 	ui->customPlot->plotLayout()->addElement(0, 0, new QCPTextElement(ui->customPlot, "Graph1", QFont("sans", 12, QFont::Bold)));
+
+	No final da função é chamada a função que será repetida periodicamente e também é passado o ṕeríodo de repetição:
+	- realtimeSlot() será repetida 							connect(timer1,SIGNAL(timeout()),this,SLOT(realtimeDataSlot()));
+    - intervalo de repetiçaõ em milisegundos				timer1->start(1000);
+==========================================================================================================================================
+
+void Widget::realtimeDataSlot() -> FUNÇÃO QUE SERÁ REPETIDA A CADA INSTANTE DE TEMPO PARA ATUALIZAR OS VALORES DAS VARIAVEIS DOS GRAFICOS
+
+    - String de status no final da tela				ui->label->setText("MPPT = String");
+
+    NESSE EXEMPLO OS VALORES DAS VARIÁVEIS SÃO DEFINIDOS ALEATORIAMENTE
+    var_graph1 = rand()%100;
+    var_graph2 = rand()%10;
+    var_graph3 = rand()%10;
+    var_graph4 = rand()%10;
+    var_graph5 = rand()%10;
+    var_graph6 = rand()%10;
+    var_graph7 = rand()%10;
+    var_graph8 = rand()%10;
+    var_graph9 = rand()%10;
+    var_graph10 = rand()%10;
+    var_graph11 = rand()%10;
+    var_graph12 = rand()%10;
